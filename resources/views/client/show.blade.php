@@ -60,7 +60,7 @@
           <div class="col-12 mb-4">
               <div class="card o-hidden border-0 shadow h-100 py-2">
                 <div class="card-body text-center">
-                  <h3 class="text-gray-900 font-weight-bold">Ticket tidak tersedia</h3>
+                  <h3 class="text-gray-900 font-weight-bold">Tiket tidak tersedia</h3>
                   <p class="text-muted">Ubah pencarian dengan data yang berbeda.</p>
                   <a href="{{ url('/') }}" class="btn btn-primary" style="font-size: 16px; border-radius: 10rem;">
                     Ubah Pencarian

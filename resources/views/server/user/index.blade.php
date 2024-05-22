@@ -95,6 +95,7 @@
               <td>No</td>
               <td>Name</td>
               <td>Username</td>
+              <td>Nomor Telepon/Whatsapp</td>
               <td>Level</td>
               <th>Action</th>
             </tr>
@@ -105,6 +106,7 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $data->name }}</td>
                 <td>{{ $data->username }}</td>
+                <td>{{ $data->telepon }}</td>
                 <td>{{ $data->level }}</td>
                 <td>
                   <form

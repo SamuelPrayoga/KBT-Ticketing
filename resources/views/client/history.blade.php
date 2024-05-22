@@ -46,9 +46,9 @@
               <div class="card o-hidden border-0 shadow h-100 py-2">
                 <div class="card-body text-center">
                   <h3 class="text-gray-900 font-weight-bold">Tidak ada pemesanan</h3>
-                  <p class="text-muted">Silahkan lakukan pemesanan ticket terlebih dahulu.</p>
+                  <p class="text-muted">Silahkan lakukan pemesanan tiket terlebih dahulu.</p>
                   <a href="{{ url('/') }}" class="btn btn-primary" style="font-size: 16px; border-radius: 10rem;">
-                    Cari Ticket
+                    Cari Tiket
                   </a>
                 </div>
               </div>

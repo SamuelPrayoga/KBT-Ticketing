@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Ticket - @yield('title')</title>
+  <title>Tiket - @yield('title')</title>
   <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
 
   <!-- Custom fonts for this template-->
@@ -107,7 +107,7 @@
               <div class="title-icon rotate-n-15">
                 <i class="fas fa-ticket-alt"></i>
               </div>
-              <div class="title-text mx-3">Ticket</div>
+              <div class="title-text mx-3">Tiket</div>
             </a>
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">

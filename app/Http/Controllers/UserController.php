@@ -41,6 +41,7 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|string',
             'username' => 'required|string|unique:users',
+            'telepon' => 'required', 'string', 'max:14',
             'password' => 'required|string|min:8|confirmed',
             'level' => 'required'
         ]);
@@ -48,6 +49,7 @@ class UserController extends Controller
         User::create([
             'name' => $request->name,
             'username' => $request->username,
+            'telepon' => $request->telepon,
             'password' => Hash::make($request->password),
             'level' => $request->level
         ]);
@@ -112,6 +114,19 @@ class UserController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Nama anda berhasil diperbarui!');
+    }
+
+    public function telepon(Request $request)
+    {
+        $this->validate($request, [
+            'telepon' => 'required'
+        ]);
+
+        User::find(Auth::user()->id)->update([
+            'telepon' => $request->telepon
+        ]);
+
+        return redirect()->back()->with('success', 'Nomor Telepon/Whatsapp anda berhasil diperbarui!');
     }
 
     public function password(Request $request)

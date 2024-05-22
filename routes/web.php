@@ -19,6 +19,7 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
     Route::get('/pengaturan', [App\Http\Controllers\UserController::class, 'create'])->name('pengaturan');
     Route::post('/edit/name', [App\Http\Controllers\UserController::class, 'name'])->name('edit.name');
+    Route::post('/edit/telepon', [App\Http\Controllers\UserController::class, 'telepon'])->name('edit.telepon');
     Route::post('/edit/password', [App\Http\Controllers\UserController::class, 'password'])->name('edit.password');
     Route::get('/transaksi/{kode}', [App\Http\Controllers\LaporanController::class, 'show'])->name('transaksi.show');
 
