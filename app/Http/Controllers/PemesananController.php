@@ -103,9 +103,8 @@ class PemesananController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id, $data)
-    {
-        $data = Crypt::decrypt($data);
+    public function show(Request $request){
+        $data = Crypt::decrypt($request->data);
         $category = Category::find($data['category']);
         $rute = Rute::with('transportasi')->where('start', $data['start'])->where('end', $data['end'])->get();
         if ($rute->count() > 0) {
@@ -123,6 +122,7 @@ class PemesananController extends Controller
                             'kode' => $val->transportasi->kode,
                             'kursi' => $kursi,
                             'waktu' => $data['waktu'],
+                            'jam' => $val->jam,
                             'id' => $val->id,
                         ];
                     }
@@ -147,7 +147,7 @@ class PemesananController extends Controller
         $data = Crypt::decrypt($id);
         $rute = Rute::find($data['id']);
         $transportasi = Transportasi::find($rute->transportasi_id);
-        return view('client.kursi', compact('data', 'transportasi'));
+        return view('client.kursi', compact('data', 'transportasi','rute'));
     }
 
     /**
@@ -173,15 +173,17 @@ class PemesananController extends Controller
         //
     }
 
-    public function pesan($kursi, $data)
+    public function pesan($data)
     {
-        $d = Crypt::decrypt($data);
+        $d = json_decode($data, true);
+        $kursi = json_encode($d['seats']);
         $huruf = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         $kodePemesanan = strtoupper(substr(str_shuffle($huruf), 0, 7));
 
-        $rute = Rute::with('transportasi.category')->find($d['id']);
+        $rute = Rute::with('transportasi.category')->find($d['route']);
+        $transportasi = Transportasi::where('id', $rute->transportasi_id)->first();
 
-        $waktu = $d['waktu'] . " " . $rute->jam;
+        $waktu = $d['time'] . " " . $rute->jam;
 
         Pemesanan::Create([
             'kode' => $kodePemesanan,
@@ -190,6 +192,10 @@ class PemesananController extends Controller
             'total' => $rute->harga,
             'rute_id' => $rute->id,
             'penumpang_id' => Auth::user()->id
+        ]);
+
+        $transportasi->update([
+            'tersedia' => $transportasi->tersedia - count($d['seats'])
         ]);
 
         return redirect('/')->with('success', 'Pemesanan Tiket ' . $rute->transportasi->category->name . ' Success!');

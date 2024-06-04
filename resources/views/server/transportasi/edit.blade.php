@@ -85,6 +85,18 @@
           />
         </div>
         <div class="form-group">
+            <label for="jumlah">Jumlah Kursi Tersedia</label>
+            <input
+              type="text"
+              class="form-control"
+              id="tersedia"
+              name="tersedia"
+              onkeypress="return inputNumber(event)"
+              value="{{ $transportasi->tersedia }}"
+              required
+            />
+          </div>
+        <div class="form-group">
           <label for="category_id">Category</label><br>
           <select
             class="select2 form-control"

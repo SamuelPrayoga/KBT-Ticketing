@@ -25,9 +25,9 @@ class CreatePemesananTable extends Migration
             $table->unsignedBigInteger('petugas_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('rute_id')->references('id')->on('rute');
-            $table->foreign('penumpang_id')->references('id')->on('users');
-            $table->foreign('petugas_id')->references('id')->on('users');
+            $table->foreign('rute_id')->references('id')->on('rute')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('penumpang_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('petugas_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

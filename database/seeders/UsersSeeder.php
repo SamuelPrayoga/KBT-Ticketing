@@ -20,6 +20,7 @@ class UsersSeeder extends Seeder
             'name' => 'Admin',
             'username' => 'admin',
             'password' => Hash::make('admin123'),
+            'telepon' => '081234567890',
             'level' => 'Admin',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')

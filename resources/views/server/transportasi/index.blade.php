@@ -32,7 +32,7 @@
     .text-muted {
       color: #6c757d !important;
     }
-    
+
     .select2-container .select2-selection--single {
       display: block;
       width: 100%;
@@ -100,6 +100,7 @@
               <td>Kode</td>
               <td>Name</td>
               <td>Jumlah Kursi</td>
+              <td>Jumlah Kursi Tersedia</td>
               <th>Action</th>
             </tr>
           </thead>
@@ -116,6 +117,7 @@
                     </small>
                   </p>
                 </td>
+                <td>{{ $data->jumlah }} Kursi</td>
                 <td>{{ $data->jumlah }} Kursi</td>
                 <td>
                   <form
@@ -206,6 +208,18 @@
                 required
               />
             </div>
+            <div class="form-group">
+                <label for="jumlah">Jumlah Kursi Tersedia</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tersedia"
+                  name="tersedia"
+                  onkeypress="return inputNumber(event)"
+                  placeholder="Jumlah Kursi Tersedia"
+                  required
+                />
+              </div>
             <div class="form-group">
               <label for="category_id">Category</label><br>
               <select

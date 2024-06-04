@@ -13,6 +13,7 @@ class Transportasi extends Model
         'name',
         'kode',
         'jumlah',
+        'tersedia',
         'category_id'
     ];
 

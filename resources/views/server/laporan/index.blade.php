@@ -72,11 +72,21 @@
                                         </small>
                                     </p>
                                 </td>
+                                @php
+                                    $seats = json_decode($data->kursi, true);
+                                    // dd($data->kursi);
+                                @endphp
                                 <td>
                                     <h5 class="card-title">{{ $data->penumpang->name }}</h5>
                                     <p class="card-text">
                                         <small class="text-muted">
-                                            Nomor Kursi : {{ $data->kursi }}
+                                            Nomor Kursi :
+                                            @for ($i = 0; $i < count($seats) ; $i++)
+                                                {{$seats[$i]}}
+                                                @if ($i < count($seats) - 1)
+                                                ,
+                                                @endif
+                                            @endfor
                                         </small>
                                     </p>
                                 </td>
