@@ -118,7 +118,7 @@
                   </p>
                 </td>
                 <td>{{ $data->jumlah }} Kursi</td>
-                <td>{{ $data->jumlah }} Kursi</td>
+                <td>{{ $data->tersedia }} Kursi</td>
                 <td>
                   <form
                     action="{{ route('transportasi.destroy', $data->id) }}"

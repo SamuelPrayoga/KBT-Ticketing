@@ -111,9 +111,18 @@
                         <td>Nomor Telepon/Whatsapp</td>
                         <td class="text-right">{{ $data->penumpang->telepon }}</td>
                     </tr>
+                    @php
+                        $seats = json_decode($data->kursi, true);
+                        // dd($data->kursi);
+                    @endphp
                     <tr>
                         <td>Nomor Kursi</td>
-                        <td class="text-right">{{ $data->kursi }}</td>
+                        <td class="text-right">@for ($i = 0; $i < count($seats) ; $i++)
+                            {{$seats[$i]}}
+                            @if ($i < count($seats) - 1)
+                            ,
+                            @endif
+                        @endfor</td>
                     </tr>
                     <tr>
                         <td>Harga</td>

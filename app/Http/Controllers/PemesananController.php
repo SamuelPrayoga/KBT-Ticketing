@@ -189,7 +189,7 @@ class PemesananController extends Controller
             'kode' => $kodePemesanan,
             'kursi' => $kursi,
             'waktu' => $waktu,
-            'total' => $rute->harga,
+            'total' => $rute->harga * count($d['seats']),
             'rute_id' => $rute->id,
             'penumpang_id' => Auth::user()->id
         ]);
