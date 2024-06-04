@@ -109,9 +109,16 @@ class PemesananController extends Controller
         $rute = Rute::with('transportasi')->where('start', $data['start'])->where('end', $data['end'])->get();
         if ($rute->count() > 0) {
             foreach ($rute as $val) {
-                $pemesanan = Pemesanan::where('rute_id', $val->id)->where('waktu')->count();
+                $pemesanan = Pemesanan::where('rute_id', $val->id)->whereDate('waktu', $data['waktu'])->get();
+                $array_seat = [];
+                foreach($pemesanan as $pes){
+                    $jlh_kursi = json_decode($pes->kursi, true);
+                    foreach($jlh_kursi as $seat){
+                        array_push($array_seat, $seat);
+                    }
+                }
                 if ($val->transportasi) {
-                    $kursi = Transportasi::find($val->transportasi_id)->jumlah - $pemesanan;
+                    $kursi = Transportasi::find($val->transportasi_id)->jumlah - count($array_seat);
                     if ($val->transportasi->category_id == $category->id) {
                         $dataRute[] = [
                             'harga' => $val->harga,
@@ -181,7 +188,6 @@ class PemesananController extends Controller
         $kodePemesanan = strtoupper(substr(str_shuffle($huruf), 0, 7));
 
         $rute = Rute::with('transportasi.category')->find($d['route']);
-        $transportasi = Transportasi::where('id', $rute->transportasi_id)->first();
 
         $waktu = $d['time'] . " " . $rute->jam;
 
@@ -192,10 +198,6 @@ class PemesananController extends Controller
             'total' => $rute->harga * count($d['seats']),
             'rute_id' => $rute->id,
             'penumpang_id' => Auth::user()->id
-        ]);
-
-        $transportasi->update([
-            'tersedia' => $transportasi->tersedia - count($d['seats'])
         ]);
 
         return redirect('/')->with('success', 'Pemesanan Tiket ' . $rute->transportasi->category->name . ' Success!');

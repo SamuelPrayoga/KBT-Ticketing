@@ -18,7 +18,6 @@ class CreateTransportasiTable extends Migration
             $table->string('name');
             $table->string('kode', 10);
             $table->integer('jumlah');
-            $table->integer('tersedia');
             $table->unsignedBigInteger('category_id');
             $table->timestamps();
 

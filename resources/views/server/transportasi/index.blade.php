@@ -100,7 +100,6 @@
               <td>Kode</td>
               <td>Name</td>
               <td>Jumlah Kursi</td>
-              <td>Jumlah Kursi Tersedia</td>
               <th>Action</th>
             </tr>
           </thead>
@@ -118,7 +117,6 @@
                   </p>
                 </td>
                 <td>{{ $data->jumlah }} Kursi</td>
-                <td>{{ $data->tersedia }} Kursi</td>
                 <td>
                   <form
                     action="{{ route('transportasi.destroy', $data->id) }}"
@@ -208,18 +206,6 @@
                 required
               />
             </div>
-            <div class="form-group">
-                <label for="jumlah">Jumlah Kursi Tersedia</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="tersedia"
-                  name="tersedia"
-                  onkeypress="return inputNumber(event)"
-                  placeholder="Jumlah Kursi Tersedia"
-                  required
-                />
-              </div>
             <div class="form-group">
               <label for="category_id">Category</label><br>
               <select

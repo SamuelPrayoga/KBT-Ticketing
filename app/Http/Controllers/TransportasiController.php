@@ -53,7 +53,6 @@ class TransportasiController extends Controller
                 'name' => $request->name,
                 'kode' => strtoupper($request->kode),
                 'jumlah' => $request->jumlah,
-                'tersedia' => $request->tersedia,
                 'category_id' => $request->category_id,
             ]
         );
