@@ -17,7 +17,7 @@ class CreatePemesananTable extends Migration
             $table->id();
             $table->string('kode');
             $table->string('kursi')->nullable();
-            $table->timestamp('waktu');
+            $table->datetime('waktu');
             $table->integer('total');
             $table->enum('status', ['Belum Bayar', 'Sudah Bayar'])->default('Belum Bayar');
             $table->unsignedBigInteger('rute_id');
