@@ -69,7 +69,7 @@
                         {{ $data->rute->start }}
                     </div>
                     <div class="col px-3">
-                        <div style="border-top: 1px solid black"></div>
+                        <div style="border-top: 3px solid black"></div>
                     </div>
                     <div class="col-auto text-right font-weight-bold h5" style="margin-bottom: 0">
                         {{ $data->rute->end }}
@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <p style="margin-bottom: 0; margin-top: 5px;">Jadwal Berangkat</p>
-                <h5 class="font-weight-bold text-center">
+                <h5 class="font-weight-bold text-center" style="text-transform: uppercase;">
                     <div>
                         {{ date('l, d F Y', strtotime($data->waktu)) }}
                     </div>
@@ -105,7 +105,7 @@
                     </tr>
                     <tr>
                         <td>Nama Penumpang</td>
-                        <td class="text-right">{{ $data->penumpang->name }}</td>
+                        <td class="text-right" style="text-transform: uppercase;"><strong>{{ $data->penumpang->name }}</strong></td>
                     </tr>
                     <tr>
                         <td>Nomor Telepon/Whatsapp</td>

@@ -33,11 +33,18 @@
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-sm btn-add">
-                <i class="fas fa-plus"></i>
+            <!-- Button refresh -->
+            <button type="button" class="btn btn-primary btn-sm btn-refresh" onclick="refreshPage()">
+                <i class="fas fa-sync-alt"></i> Refresh
             </button>
         </div>
+
+        <script>
+            function refreshPage() {
+                location.reload();
+            }
+        </script>
+
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
