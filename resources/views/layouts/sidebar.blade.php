@@ -4,7 +4,7 @@
     <div class="sidebar-brand-icon rotate-n-15">
       <i class="fas fa-ticket-alt"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">Tiket</div>
+    <div class="sidebar-brand-text mx-3">KBTixBook</div>
   </a>
   <!-- Divider -->
   <hr class="sidebar-divider my-0">

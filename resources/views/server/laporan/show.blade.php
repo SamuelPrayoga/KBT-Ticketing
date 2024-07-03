@@ -57,7 +57,7 @@
                             <div class="title-icon rotate-n-15">
                                 <i class="fas fa-ticket-alt"></i>
                             </div>
-                            <div class="title-text ml-1">Tiket</div>
+                            <div class="title-text ml-1">KBTixBook</div>
                         </span>
                     </div>
                 </div>

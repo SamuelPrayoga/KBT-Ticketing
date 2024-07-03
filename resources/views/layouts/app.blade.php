@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Tiket - @yield('title')</title>
+    <title>KBTixBook - @yield('title')</title>
     <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
 
     <!-- Custom fonts for this template-->
@@ -91,7 +91,7 @@
                                         - {{ date('Y') }}
                                     @endif
                                     &nbsp; All rights reserved • by
-                                    <a href="" target="_blank">Koperasi Pengangkutan Umum Bintang Tapanuli (KBT)</a>.
+                                    <a href="" target="_blank">KBTixBook</a>.
                                 </span>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                             <div class="title-icon rotate-n-15">
                                 <i class="fas fa-ticket-alt"></i>
                             </div>
-                            <div class="title-text mx-3">Tiket</div>
+                            <div class="title-text mx-3">KBTixBook</div>
                         </a>
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
@@ -167,7 +167,7 @@
                                 - {{ date('Y') }}
                             @endif
                             &nbsp; All rights reserved • by
-                            <a href="" target="_blank">Koperasi Pengangkutan Umum Bintang Tapanuli (KBT)</a>.
+                            <a href="" target="_blank">KBTixBook</a>.
                         </span>
                     </div>
                 </div>
